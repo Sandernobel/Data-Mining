@@ -1,15 +1,13 @@
-import csv
+import pandas as pd
+import numpy as np
 
 if __name__ == "__main__":
 
-    with open("ODI-2020.csv") as fq:
+    odi = pd.read_csv("ODI-2020.csv", sep=';')
+    odi.columns = ['Program', 'ML_exp', 'IR_exp', 'Statistics_exp', 'Databases_exp', "Gender", "Chocolate", "Birthday", "Neighbors",
+                   "Stand", "Stress", "100_euros", "Random_number", "Bedtime", "Good_day_1", "Good_day_2"]
 
-        subjects = []
-        reader = csv.reader(fq, delimiter=';')
-        for row in reader:
-            subjects.append(row)
-
-    headers = subjects.pop(0)
-
-    print(f"Rows: {len(subjects)}")
-    print(f"Attributes: {len(subjects[0])}")
+    print(max(odi.Stress))
+    print(odi.describe())
+    print(odi.columns)
+    print(odi.shape)
