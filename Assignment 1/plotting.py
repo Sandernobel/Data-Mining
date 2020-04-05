@@ -3,15 +3,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
 
-def plot_age(ages):
+def plot_series(to_plot):
     """
     Plots distribution of ages
     :param ages:
     :return:
     """
     # count vales and remove NA
-    counted = Counter(ages)
-    counted.pop("NA")
+    counted = Counter(to_plot)
+    if 'NA' in counted.keys():
+        counted.pop("NA")
 
     # sort keys
     keys, values = list(counted.keys()), list(counted.values())
@@ -20,4 +21,3 @@ def plot_age(ages):
 
     # plot
     plt.bar(keys, values)
-    plt.show()
