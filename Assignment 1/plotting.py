@@ -3,6 +3,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
 
+
+
+def plot_comparison(comparison):
+    """
+    """
+
+    # Compare different categorical levels
+    for x in range(len(list(comparison.keys()))):
+        plt.subplot(1,len(list(comparison.keys())),x+1)
+        plt.xlabel(list(comparison.keys())[x])
+        plot_series(comparison[list(comparison.keys())[x]])
+
+    plt.show()
+
+
+
 def plot_series(to_plot):
     """
     Plots distribution of ages

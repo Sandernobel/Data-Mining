@@ -2,26 +2,50 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+from collections import Counter
 from helpers import *
 from plotting import *
 
-def compare_stress(series, string):
+def compare_series(string, compare, count=False):
     """
-    Compares stress levels among programs
+    Compares stress levels in series
     :return:
     """
+
+    # Extract categorical variable
+    series = getattr(df, string)
     programs = set(np.asarray(series))
 
+    # Initialize dictionaries
     stress_means = dict()
-    for program in programs:
-        x = df.loc[df[string] == program]
-        x_stress = np.asarray(x.Stress)
-        x_stress = x_stress[x_stress != 'NA'].astype(int)
-        if len(x_stress) > 0:
-            stress_means[program] = np.mean(x_stress)
+    counters = dict()
 
+    # Loop over series
+    for program in programs:
+
+        # Extract relevant subjects
+        x = df.loc[df[string] == program]
+
+        # Extract continuous variable and delete na's
+        to_compare = getattr(x, compare)
+        x_stress = np.asarray(to_compare)
+        x_stress = x_stress[x_stress != 'NA'].astype(int)
+
+        # Only add if more than 2 values, otherwise it's too crowded
+        if len(x_stress) > 2:
+            if count:
+                counter = Counter(x_stress)
+                counters[program] = counter
+            else:
+                stress_means[program] = np.mean(x_stress)
+
+    if count:
+        return counters
     return stress_means
 
+
+
+    
 if __name__ == "__main__":
     # Read in data
     file = "ODI-2020.csv"
@@ -36,15 +60,15 @@ if __name__ == "__main__":
     male = df.loc[df['Gender'] == 'male']
     female = df.loc[df['Gender'] == 'female']
 
+    # Clean up programs
     df.Program = program(np.asarray(df.Program))
     df.Age = birthday(np.asarray(df.Age))
     df.Stress = stress(np.asarray(df.Stress), cat=False)
+    df.Bedtime = bedtime(np.asarray(df.Bedtime))
 
-    program_means = compare_stress(df.Program, 'Program')
-    age_means = compare_stress(df.Age, 'Age')
+    gender_bedtimes = compare_series('Gender', 'Bedtime', count=True)
+    plot_comparison(gender_bedtimes)
 
-    plt.subplot(1,2,1)
-    plot_series(program_means)
-    plt.subplot(1,2,2)
-    plot_series(age_means)
-    plt.show()
+    program_bedtimes = compare_series('Program', "Bedtime", count=True)
+    program_bedtimes = {key: value for (key, value) in program_bedtimes.items() if len(list(program_bedtimes[key].values())) > 3}
+    plot_comparison(program_bedtimes)
