@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import re
 
 from collections import Counter
+
+#########################
+# helper functions
+#########################
 
 
 def clean_up(programs, swapper):
@@ -31,94 +34,78 @@ def delete_rest(programs, swapper):
     prog = np.asarray(['NA' if x not in values else x for x in programs])
     return prog
 
-def program(prog):
-    #### Clean up Program
-    swapper = {"Artificial Intelligence": "AI",
-               "AI": "AI",
-               "Business Analytics": "BA",
-               "Computer science": "CS",
-               "CS": "CS",
-               "QRM": "QRM",
-               "Quantitative risk management": "QRM",
-               "Econometrics": "Econometrics",
-               "Business Administration": "Business administration",
-               "Bioinformatics": "Bioinformatics",
-               "Computational Science": "Computational science",
-               "Human language technologies": "Human language technologies",
-               "Digital business and innovation": "Digital business and innovation",
-               "Information Sciences": "Information sciences",
-               "Exchange": "Exchange"}
-
-    # swap all studies to one standard notation
-    prog = clean_up(prog, swapper)
-
-    return prog
-
-def birthday(dates):
-    #### Clean up Birthday
-
-    # create dictionary
-    birth_swap = dict()
-    for x in range(1992, 1999):
-        birth_swap[x] = str(2020 - x - 1) + '/' + str(2020 - x)
-
-    # clean up array
-    birth = clean_up(dates, birth_swap)
-    # swap all other data with NA
-    birth = delete_rest(np.asarray(birth), birth_swap)
-    return birth
-
-def stress(levels, cat):
+def calc_mean(series, min_val=None, max_val=None):
     """
-    Cleans up stress series
-    :param levels:
+    """
+    series = pd.Series(series)
+    if min_val and max_val:
+        x_mean = np.asarray(pd.to_numeric(series, errors='coerce').dropna())
+        x_mean = np.where(x_mean < min_val, min_val, x_mean)
+        x_mean = np.where(x_mean > max_val, max_val, x_mean)
+    else:
+        x_mean = np.asarray(pd.to_numeric(series, errors='coerce').dropna()).astype(int)
+    return np.mean(x_mean)
+
+
+def get_count(to_plot):
+    """
+    Plots series
+    """
+    counted = Counter(to_plot)
+    counted.pop("NA")
+
+    keys, values = list(counted.keys()), list(counted.values())
+    x = list(sorted(zip(keys, values)))
+    keys, values = zip(*x)
+
+    return keys, values
+
+
+def impute_mean(series, mean, min_val=None, max_val=None):
+    """
+    """
+
+    x = np.asarray(pd.to_numeric(series, errors='coerce')).astype(int)
+    x = np.where(x < -100, mean, x).astype(int)
+
+    if min_val and max_val:
+        x = np.where(x < min_val, min_val, x)
+        x = np.where(x > max_val, max_val, x)
+    return x
+
+def compare_series(string, compare, count=False):
+    """
+    Compares stress levels in series
     :return:
     """
 
-    # Create swapper
-    swap = {',': -50,
-            '8-100': -50,
-            '-': -50}
+    # Extract categorical variable
+    series = getattr(df, string)
+    programs = set(np.asarray(series))
 
-    # Clean up
-    stress = clean_up(np.asarray(levels), swap).astype(int)
-    stress = np.asarray(['NA' if x == -50 else x for x in stress])
+    # Initialize dictionaries
+    stress_means = dict()
+    counters = dict()
 
-    # If categorized, swap it with categories
-    if cat:
-        breaks = [0, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101]
-        values = ['0-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70', '71-80', '81-90', '91-100']
-        stress_swap = dict()
+    # Loop over series
+    for program in programs:
 
-        for x in range(len(breaks) - 1):
-            for y in range(breaks[x], breaks[x + 1]):
-                stress_swap[str(y)] = values[x]
+        # Extract relevant subjects
+        x = df.loc[df[string] == program]
 
-        stress = np.asarray([stress_swap[z] if z != 'NA' else z for z in stress])
-    return stress
+        # Extract continuous variable and delete na's
+        to_compare = getattr(x, compare)
+        x_stress = np.asarray(to_compare)
+        x_stress = x_stress[x_stress != 'NA'].astype(int)
 
-def bedtime(times):
-    """
-    Cleans up bedtime series
-    :param bedtime:
-    :return:
-    """
+        # Only add if more than 2 values, otherwise it's too crowded
+        if len(x_stress) > 2:
+            if count:
+                counter = Counter(x_stress)
+                counters[program] = counter
+            else:
+                stress_means[program] = np.mean(x_stress)
 
-    # Create swapper
-    bed_swap = dict()
-    for x in range(24, 0, -1):
-        if x % 12 == 0:
-            bed_swap[str(x)] = '12'
-        elif x < 10:
-            bed_swap['0' + str(x)] = str(x % 12)
-        else:
-            bed_swap[str(x)] = str(x % 12)
-    for x in range(8):
-        bed_swap[str(x) + 'am'] = str(x)
-        bed_swap[str(x) + ' am'] = str(x)
-    bed_swap['0:'] = '12'
-
-    # Clean up
-    bedtime = clean_up(times.astype(str), bed_swap)
-    bedtime = delete_rest(bedtime, bed_swap)
-    return bedtime
+    if count:
+        return counters
+    return stress_means
