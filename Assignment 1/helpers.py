@@ -47,20 +47,6 @@ def calc_mean(series, min_val=None, max_val=None):
     return np.mean(x_mean)
 
 
-def get_count(to_plot):
-    """
-    Plots series
-    """
-    counted = Counter(to_plot)
-    counted.pop("NA")
-
-    keys, values = list(counted.keys()), list(counted.values())
-    x = list(sorted(zip(keys, values)))
-    keys, values = zip(*x)
-
-    return keys, values
-
-
 def impute_mean(series, mean, min_val=None, max_val=None):
     """
     """
@@ -72,40 +58,3 @@ def impute_mean(series, mean, min_val=None, max_val=None):
         x = np.where(x < min_val, min_val, x)
         x = np.where(x > max_val, max_val, x)
     return x
-
-def compare_series(string, compare, count=False):
-    """
-    Compares stress levels in series
-    :return:
-    """
-
-    # Extract categorical variable
-    series = getattr(df, string)
-    programs = set(np.asarray(series))
-
-    # Initialize dictionaries
-    stress_means = dict()
-    counters = dict()
-
-    # Loop over series
-    for program in programs:
-
-        # Extract relevant subjects
-        x = df.loc[df[string] == program]
-
-        # Extract continuous variable and delete na's
-        to_compare = getattr(x, compare)
-        x_stress = np.asarray(to_compare)
-        x_stress = x_stress[x_stress != 'NA'].astype(int)
-
-        # Only add if more than 2 values, otherwise it's too crowded
-        if len(x_stress) > 2:
-            if count:
-                counter = Counter(x_stress)
-                counters[program] = counter
-            else:
-                stress_means[program] = np.mean(x_stress)
-
-    if count:
-        return counters
-    return stress_means

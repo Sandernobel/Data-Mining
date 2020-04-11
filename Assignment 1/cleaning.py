@@ -23,7 +23,6 @@ def program(prog):
                "Business Administration": "Business administration",
                "Bioinformatics": "Bioinformatics",
                "Computational Science": "Computational science",
-               "Human language technologies": "Human language technologies",
                "Digital business and innovation": "Digital business and innovation",
                "Information Sciences": "Information sciences",
                "Exchange": "Exchange"}
@@ -49,7 +48,7 @@ def birthday(dates):
     birth_swap[99] = str(2020 - 1999 - 1) + '/' + str(2020 - 1999)
 
     birth = clean_up(np.asarray(dates), birth_swap)
-
+    birth = np.asarray(["NA" if x not in birth_swap.values() else x for x in birth])
     return birth
 
 
