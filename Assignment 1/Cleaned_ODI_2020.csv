@@ -1,0 +1,270 @@
+Program,ML_course,IR_course,Stats_course,Databases_course,Gender,Chocolate,Age,Neighbors,Stand,Stress,Euros,Random_number,Bedtime,Good_day_1,Good_day_2
+Beta,no,unknown,mu,ja,female,fat,22.0,0.0,no,0.0,4.0,227.0,10.0,weather,sport
+Business,no,0,mu,nee,male,unknown,24.0,2.0,no,85.0,25.0,65.0,11.0,other,drinks
+Beta,no,0,mu,ja,female,neither,24.72429906542056,4.0,no,50.0,10.0,3.0,0.0,other,productivity
+Business,no,0,mu,nee,female,neither,26.0,0.0,no,10.0,99.0,2.0,11.0,food,socialize
+Business,yes,0,mu,ja,male,neither,27.0,0.0,no,60.0,80.0,7.0,10.0,weather,socialize
+Business,yes,1,mu,ja,male,fat,24.72429906542056,0.0,no,0.0,10.0,6.0,11.0,weather,productivity
+Business,no,0,mu,nee,female,neither,24.0,0.0,no,71.0,10.0,4.0,0.0,drinks,sport
+Beta,no,0,mu,ja,male,I have no idea what you are talking about,28.0,3.6496350364963503,no,10.0,4515169791.764706,256.0,0.0,sleep,food
+Business,yes,0,mu,ja,female,neither,22.0,2.0,no,0.0,50.0,3.0,11.0,friends,productivity
+Business,no,0,sigma,nee,male,fat,25.0,1.0,no,22.0,4515169791.764706,8.0,11.0,sport,sleep
+Business,no,0,mu,nee,female,fat,24.72429906542056,0.0,no,70.0,50.0,8.0,11.0,other,food
+Beta,yes,1,mu,ja,male,neither,24.72429906542056,0.0,no,0.0,10.0,7.0,1.0,other,food
+Business,yes,0,sigma,ja,male,I have no idea what you are talking about,22.0,5.0,unknown,20.0,0.0,456123.0,10.0,productivity,music
+Beta,yes,0,mu,nee,male,neither,24.0,0.0,no,20.0,5.0,728.0,11.0,food,sleep
+Beta,no,0,mu,nee,male,fat,24.0,0.0,no,15.0,10.0,7.0,11.0,food,food
+Beta,yes,0,mu,nee,male,fat,26.0,1.0,no,30.0,5.0,6.0,1.0,weather,food
+Business,no,0,mu,nee,unknown,neither,28.0,2.0,no,30.0,1.0,1.0,11.0,sleep,productivity
+Business,no,0,mu,nee,male,neither,24.72429906542056,0.0,no,17.0,0.0,2.0,0.0,productivity,sport
+Business,no,0,mu,nee,male,neither,23.0,0.0,no,80.0,85.0,9.0,2.0,drinks,food
+Beta,yes,1,mu,ja,male,slim,24.0,0.0,no,65.0,0.0,2.0,1.0,productivity,sport
+Beta,yes,1,mu,ja,female,I have no idea what you are talking about,23.0,1.0,no,25.0,3.0,8.0,0.0,weather,socialize
+Business,no,1,sigma,nee,female,fat,24.72429906542056,0.0,no,70.0,0.0,47.0,11.0,other,food
+Beta,yes,1,mu,ja,male,neither,24.0,0.0,no,70.0,15.0,666.0,0.0,weather,music
+Beta,no,0,mu,nee,male,slim,24.0,0.0,no,5.0,37.0,14.0,11.0,fun,sport
+Business,yes,0,mu,nee,male,I have no idea what you are talking about,27.0,0.0,no,60.0,50.0,9.0,11.0,fun,productivity
+Business,yes,0,mu,nee,female,fat,24.72429906542056,0.0,no,35.0,4515169791.764706,7.0,1.0,weather,sport
+Beta,yes,1,mu,ja,female,neither,25.0,0.0,no,10.0,4515169791.764706,98.0,11.0,sport,socialize
+Beta,yes,1,mu,ja,female,neither,23.0,0.0,no,80.0,100.0,100.0,11.0,weather,food
+Beta,no,0,unknown,unknown,male,I have no idea what you are talking about,23.0,3.0,unknown,90.0,60.0,99.0,11.0,weather,socialize
+Business,yes,0,mu,nee,male,fat,23.0,0.0,no,30.0,10.0,5.0,11.0,sport,socialize
+Business,yes,0,mu,nee,male,fat,23.0,0.0,no,30.0,10.0,5.0,11.0,sport,socialize
+Business,yes,1,mu,nee,female,fat,23.0,0.0,no,60.0,60.0,74.0,0.0,weather,drinks
+Beta,no,0,mu,nee,female,slim,23.0,2.0,yes,20.0,30.0,7.0,0.0,other,socialize
+Beta,no,unknown,mu,nee,male,fat,24.0,0.0,no,60.0,4515169791.764706,10.0,11.0,food,socialize
+Beta,yes,0,mu,nee,male,slim,30.0,0.0,yes,99.0,4515169791.764706,4.384838483438855e+29,1.0,weather,productivity
+Beta,yes,1,mu,ja,male,fat,28.0,0.0,no,10.0,5.0,33.0,1.0,other,food
+Business,no,0,mu,nee,female,neither,23.0,0.0,no,20.0,5.0,2.0,11.0,weather,socialize
+Business,yes,1,mu,ja,male,neither,24.72429906542056,0.0,no,20.0,5.0,6.0,1.0,fun,socialize
+Beta,yes,0,mu,ja,female,fat,23.0,0.0,no,30.0,0.0,6.0,11.0,sleep,other
+Beta,yes,0,mu,nee,male,fat,24.72429906542056,0.0,no,20.0,1.0,7.0,2.0,weather,food
+Business,yes,unknown,mu,nee,male,fat,22.0,0.0,no,50.0,1.0,16.0,2.0,productivity,playing
+Business,yes,0,mu,nee,female,fat,24.72429906542056,0.0,no,60.0,4515169791.764706,6.0,3.0,weather,food
+Beta,yes,0,mu,nee,female,fat,24.0,0.0,no,30.0,0.0,4.0,0.0,sport,socialize
+Business,no,1,mu,nee,female,fat,24.72429906542056,0.0,no,40.0,70.0,26.0,0.0,other,food
+Beta,no,0,mu,nee,female,fat,24.0,2.0,no,25.0,1.0,66.0,11.0,weather,socialize
+Business,no,0,mu,ja,female,fat,24.0,1.0,no,0.0,75.0,2.1134547392206386e+35,11.0,weather,outside
+Business,yes,1,mu,ja,female,neither,25.0,1.0,no,10.0,10.0,4.0,11.0,food,productivity
+Business,yes,0,mu,nee,female,fat,23.0,3.0,no,40.0,20.0,2.0,11.0,weather,sleep
+Beta,yes,0,mu,nee,female,fat,24.72429906542056,0.0,no,65.0,25.0,4.0,0.0,other,other
+Business,yes,0,sigma,nee,female,fat,24.0,0.0,yes,0.0,10.0,3.0,0.0,fun,socialize
+Business,yes,0,mu,ja,female,fat,21.0,0.0,no,15.0,1.0,8.0,0.0,fun,food
+Beta,no,0,mu,ja,male,I have no idea what you are talking about,28.0,0.0,no,10.0,10.0,9.0,0.0,sleep,food
+Business,yes,0,mu,ja,female,slim,22.0,2.0,no,50.0,60.0,3.0,0.0,sleep,food
+Beta,no,0,mu,nee,female,neither,27.0,1.0,no,60.0,4515169791.764706,3.0,0.0,productivity,food
+Business,no,0,mu,nee,female,I have no idea what you are talking about,23.0,1.0,no,30.0,5.0,1.0,11.0,other,outside
+Business,no,0,mu,nee,female,unknown,23.0,0.0,no,50.0,4515169791.764706,1.0,11.0,weather,playing
+Business,yes,0,mu,ja,male,fat,27.0,1.0,no,60.0,1.0,8.0,0.0,fun,food
+Beta,yes,0,mu,ja,male,I have no idea what you are talking about,23.0,0.0,no,5.0,5.0,22.0,6.0,productivity,socialize
+Business,yes,1,mu,ja,male,neither,24.0,0.0,no,96.0,0.0,6.0,0.0,other,food
+Beta,yes,1,mu,ja,male,neither,24.0,0.0,no,5.0,4515169791.764706,7.0,0.0,sport,food
+Beta,yes,0,mu,ja,male,neither,27.0,0.0,no,90.0,90.0,6.0,0.0,food,other
+Business,yes,0,mu,nee,male,neither,24.72429906542056,0.0,no,10.0,30.0,5.0,11.0,weather,music
+Business,yes,0,mu,ja,male,fat,29.0,4.0,no,90.0,50.0,7.0,4.0,other,socialize
+Beta,yes,0,mu,ja,female,neither,26.0,0.0,no,30.0,10.0,8.0,11.0,friends,outside
+Beta,yes,0,mu,ja,male,neither,28.0,0.0,no,20.0,0.0,1.0,0.0,sleep,other
+Beta,yes,0,sigma,nee,unknown,slim,30.0,0.0,unknown,99.0,4515169791.764706,4.0,2.0,other,other
+Business,no,0,mu,nee,male,neither,24.0,1.0,no,78.0,4515169791.764706,6.0,1.0,other,food
+Business,yes,0,mu,ja,male,fat,26.0,0.0,no,10.0,5.0,7.0,10.0,sport,sport
+Business,yes,0,mu,ja,male,neither,28.0,2.0,no,70.0,10.0,7.0,2.0,drinks,food
+Beta,yes,0,mu,nee,female,unknown,31.0,1.0,no,60.0,4515169791.764706,3.0,10.0,weather,other
+Beta,no,0,mu,nee,male,I have no idea what you are talking about,23.0,0.0,no,50.0,100.0,10.0,1.0,other,music
+Beta,yes,1,mu,ja,male,fat,25.0,0.0,no,60.0,1.0,10.0,11.0,drinks,food
+Beta,yes,0,mu,nee,female,fat,23.0,1.0,no,5.0,4515169791.764706,3.0,10.0,weather,food
+Beta,yes,0,mu,nee,male,fat,22.0,0.0,no,10.0,1.0,2.1134547392206386e+35,2.0,drinks,food
+Business,yes,0,mu,ja,female,slim,22.0,0.0,no,32.0,4515169791.764706,5839235.0,11.0,sleep,food
+Beta,no,1,unknown,ja,male,neither,24.72429906542056,0.0,no,20.0,4515169791.764706,42.0,2.0,productivity,productivity
+Business,no,0,mu,nee,male,fat,24.72429906542056,0.0,no,20.0,1.0,7.0,11.0,productivity,food
+Beta,no,0,mu,ja,female,neither,22.0,0.0,no,10.0,1.0,6.0,1.0,weather,productivity
+Beta,yes,0,mu,ja,male,neither,24.0,7.0,no,78.0,100.0,897858.0,4.0,sleep,other
+Beta,yes,1,mu,nee,male,neither,24.0,0.0,no,45.0,20.0,5.0,0.0,weather,other
+Business,no,0,mu,nee,male,neither,25.0,1.0,no,10.0,10.0,7.0,0.0,food,food
+Beta,no,0,mu,nee,male,fat,24.0,3.0,no,0.0,2.0,10.0,4.0,weather,other
+Business,yes,0,mu,ja,female,fat,24.72429906542056,1.0,no,60.0,1.0,8.0,10.0,friends,food
+Business,yes,0,unknown,ja,male,fat,25.0,1.0,no,83.0,35.0,3.0,0.0,food,fun
+Business,no,0,mu,ja,male,fat,24.0,0.0,no,70.0,100.0,7.0,1.0,food,socialize
+Business,yes,0,mu,ja,female,slim,22.0,5.0,yes,50.0,70.0,8.0,0.0,sport,socialize
+Business,yes,0,mu,nee,male,fat,26.0,0.0,no,70.0,4515169791.764706,3.0,2.0,drinks,food
+Business,yes,0,mu,nee,male,slim,23.0,0.0,no,43.0,100.0,9.0,10.0,sleep,food
+Beta,yes,1,mu,ja,female,fat,24.72429906542056,2.0,no,85.0,10.0,29.0,2.0,weather,socialize
+Beta,unknown,0,sigma,unknown,female,I have no idea what you are talking about,23.0,0.0,yes,89.0,30.0,78.0,11.0,friends,socialize
+Business,yes,0,mu,nee,female,fat,24.72429906542056,0.0,no,40.0,10.0,24.0,2.0,sleep,food
+Business,no,0,mu,nee,male,fat,24.0,0.0,no,100.0,5.0,25.0,1.0,weather,food
+Beta,yes,0,mu,ja,male,neither,26.0,4.0,yes,17.0,43.0,7.0,1.0,weather,sport
+Beta,no,0,mu,ja,male,I have no idea what you are talking about,24.72429906542056,1.0,no,-100.0,1.0,8.0,0.0,food,food
+Beta,yes,1,mu,ja,female,neither,22.0,1.0,no,40.0,2.0,3.0,0.0,sleep,food
+Business,no,0,sigma,ja,male,slim,25.0,3.0,no,100.0,50.0,3.0,1.0,other,food
+Beta,no,0,mu,ja,female,I have no idea what you are talking about,24.72429906542056,0.0,no,50.0,70.0,7.0,0.0,other,other
+Beta,yes,0,mu,nee,male,neither,24.72429906542056,1.0,no,0.0,100.0,17101991.0,3.0,other,sport
+Beta,yes,0,sigma,nee,male,I have no idea what you are talking about,25.0,2.0,no,12.0,100.0,27.0,10.0,other,other
+Beta,no,1,mu,nee,male,neither,24.0,0.0,no,30.0,4515169791.764706,9.0,10.0,other,socialize
+Beta,yes,0,mu,ja,male,neither,27.0,3.0,no,25.0,0.0,13.0,3.0,other,playing
+Business,yes,0,mu,nee,male,fat,24.0,0.0,no,30.0,1.0,7.0,11.0,productivity,food
+Business,no,0,sigma,nee,male,fat,24.72429906542056,4.0,no,0.0,100.0,6.0,11.0,other,sport
+Beta,yes,0,mu,ja,male,unknown,24.72429906542056,0.0,no,20.0,4515169791.764706,37.0,1.0,other,other
+Business,no,1,mu,ja,female,fat,23.0,0.0,no,80.0,85.0,8.0,0.0,weather,productivity
+Beta,no,0,mu,ja,female,neither,26.0,1.0,no,50.0,0.0,8.0,0.0,weather,productivity
+Beta,yes,0,sigma,ja,male,I have no idea what you are talking about,31.0,0.0,no,65.0,4515169791.764706,42.0,1.0,food,socialize
+Business,yes,0,mu,nee,female,neither,23.0,1.0,no,30.0,5.0,5.0,11.0,friends,food
+Beta,yes,0,mu,ja,male,neither,24.72429906542056,0.0,no,10.0,1.0,3.0,11.0,weather,sport
+Other,yes,0,mu,ja,female,I have no idea what you are talking about,27.0,1.0,no,50.0,10.0,7.0,0.0,other,food
+Business,yes,unknown,mu,ja,female,neither,24.72429906542056,0.0,no,20.0,0.0,37.0,11.0,friends,other
+Business,yes,1,mu,ja,female,neither,22.0,0.0,no,25.0,30.0,3.0,10.0,sport,reading
+Beta,no,1,mu,ja,female,unknown,23.0,0.0,no,90.0,60.0,3.0,0.0,other,other
+Business,yes,0,mu,nee,male,fat,24.72429906542056,0.0,no,30.0,0.0,7.0,0.0,food,sport
+Beta,no,0,mu,nee,female,neither,22.0,0.0,no,60.0,4515169791.764706,12345.0,10.0,weather,productivity
+Beta,no,1,mu,ja,male,fat,26.0,0.0,no,10.0,20.0,5.621789562478514e+37,11.0,other,productivity
+Beta,no,0,mu,nee,male,fat,27.0,1.0,no,60.0,4515169791.764706,7.0,1.0,weather,socialize
+Beta,no,1,mu,ja,male,neither,25.0,0.0,no,5.0,10.0,8.0,1.0,weather,other
+Beta,no,0,sigma,nee,male,neither,26.0,1.0,no,30.0,20.0,3.0,0.0,other,sport
+Beta,no,unknown,mu,ja,female,fat,24.0,0.0,no,15.0,4.0,8.0,11.0,productivity,other
+Other,yes,1,mu,ja,male,neither,24.0,2.0,no,41.48736462093863,4515169791.764706,2.1134547392206386e+35,0.0,sport,productivity
+Other,no,0,mu,nee,male,neither,23.0,0.0,no,40.0,1.0,666.0,11.0,friends,sport
+Beta,yes,0,mu,ja,male,fat,24.0,0.0,no,0.0,69.0,7.0,11.0,weather,other
+Beta,yes,0,sigma,ja,male,neither,24.72429906542056,0.0,no,25.0,4515169791.764706,3.0,10.0,sleep,food
+Beta,no,0,mu,ja,male,neither,24.0,0.0,no,10.0,50.0,141100267.0,4.0,other,other
+Beta,no,0,mu,ja,male,neither,24.0,0.0,no,0.0,60.0,7.0,11.0,sport,other
+Beta,no,0,mu,nee,female,neither,24.0,0.0,no,12.0,7.0,3.0,11.0,productivity,socialize
+Business,yes,0,mu,ja,female,fat,29.0,1.0,no,70.0,25.0,8.0,11.0,weather,sport
+Other,yes,0,mu,nee,female,neither,24.72429906542056,0.0,no,50.0,4515169791.764706,8.0,1.0,weather,socialize
+Beta,yes,0,mu,nee,male,neither,24.72429906542056,0.0,no,75.0,4515169791.764706,72.0,0.0,other,other
+Beta,yes,1,mu,nee,male,neither,24.0,0.0,no,30.0,40.0,2.0,0.0,other,productivity
+Beta,no,1,mu,nee,male,fat,24.72429906542056,0.0,no,20.0,0.0,2.0,11.0,sleep,other
+Beta,no,0,mu,ja,male,neither,22.0,1.0,no,30.0,2.0,2.0,11.0,drinks,sleep
+Beta,yes,1,mu,nee,female,neither,26.0,1.0,no,30.0,5.0,7.0,11.0,weather,socialize
+Business,yes,1,mu,ja,male,neither,24.72429906542056,1.0,no,20.0,25.0,7.0,1.0,other,sport
+Beta,yes,0,mu,nee,male,neither,24.0,0.0,no,60.0,1.0,6.0,11.0,weather,music
+Beta,yes,0,mu,ja,male,neither,23.0,0.0,no,5.0,10.0,2.0,11.0,friends,other
+Beta,no,1,mu,ja,female,fat,25.0,0.0,no,60.0,30.0,7.0,1.0,productivity,food
+Business,yes,0,mu,nee,male,neither,24.0,16.0,no,50.0,5.0,66.0,11.0,other,other
+Beta,yes,1,sigma,ja,male,fat,22.0,0.0,no,5.0,35.0,3.0,2.0,weather,sport
+Beta,yes,1,mu,ja,male,fat,25.0,1.0,no,50.0,5.0,5.0,1.0,other,other
+Business,yes,1,mu,ja,female,fat,24.0,2.0,no,20.0,10.0,8.0,10.0,other,socialize
+Beta,yes,0,sigma,nee,male,fat,25.0,0.0,no,55.0,4515169791.764706,5.0,0.0,sport,productivity
+Beta,yes,1,mu,ja,female,neither,22.0,0.0,no,60.0,50.0,6.0,10.0,other,other
+Beta,yes,unknown,mu,ja,female,neither,24.0,0.0,yes,20.0,10.0,3.0,11.0,sport,food
+Beta,yes,1,mu,ja,female,I have no idea what you are talking about,24.72429906542056,1.0,no,68.0,4515169791.764706,8.0,0.0,weather,food
+Beta,yes,1,mu,ja,female,I have no idea what you are talking about,23.0,1.0,no,75.0,4515169791.764706,5.0,0.0,other,other
+Business,yes,1,mu,ja,male,neither,26.0,0.0,no,30.0,4515169791.764706,7.0,11.0,other,sport
+Beta,yes,1,mu,ja,male,fat,22.0,1.0,no,60.0,4515169791.764706,42.0,0.0,food,other
+Beta,yes,0,mu,nee,female,fat,24.72429906542056,0.0,no,30.0,30.0,38.0,0.0,other,drinks
+Other,yes,0,mu,ja,female,fat,34.0,2.0,no,80.0,60.0,6.0,0.0,weather,food
+Beta,no,0,mu,ja,female,neither,26.0,0.0,yes,60.0,4515169791.764706,6.0,10.0,fun,outside
+Beta,yes,0,mu,nee,female,fat,23.0,0.0,no,85.0,80.0,2.0,11.0,weather,sport
+Beta,yes,0,mu,unknown,male,neither,26.0,0.0,no,30.0,99.0,10.0,0.0,weather,other
+Beta,yes,1,mu,unknown,male,neither,27.0,1.0,no,23.0,4515169791.764706,2.1134547392206386e+35,5.0,productivity,other
+Beta,no,0,mu,nee,female,fat,23.0,3.6496350364963503,no,67.0,0.0,7.0,11.0,weather,socialize
+Business,yes,0,mu,ja,female,slim,24.72429906542056,1.0,no,25.0,4515169791.764706,4.0,1.0,friends,food
+Beta,yes,1,mu,nee,male,fat,24.0,1.0,no,5.0,4515169791.764706,4.0,1.0,sport,productivity
+Beta,no,0,unknown,nee,male,fat,26.0,0.0,no,80.0,99.0,1234.0,11.0,other,other
+Beta,yes,1,mu,ja,male,fat,22.0,0.0,no,20.0,4515169791.764706,472.0,0.0,weather,other
+Beta,yes,0,unknown,nee,male,fat,24.0,0.0,no,81.0,26.0,69.0,10.0,sleep,drinks
+Beta,no,1,sigma,ja,male,I have no idea what you are talking about,23.0,1.0,yes,0.0,100.0,5.0,11.0,other,other
+Business,yes,0,mu,nee,female,neither,28.0,1.0,no,35.0,1.0,6.0,11.0,weather,other
+Beta,no,0,mu,nee,female,fat,24.72429906542056,700.0,unknown,43.0,1000000000000.0,4.0,5.0,friends,other
+Business,no,0,mu,nee,female,neither,24.72429906542056,0.0,no,50.0,20.0,3.0,11.0,weather,food
+Beta,yes,0,sigma,nee,female,neither,25.0,1.0,no,73.0,100.0,7.0,1.0,other,other
+Beta,no,0,mu,nee,female,fat,25.0,1.0,no,30.0,20.0,3.0,10.0,weather,socialize
+Beta,yes,0,mu,nee,male,neither,25.0,0.0,no,15.0,4515169791.764706,9.0,11.0,fun,food
+Beta,no,0,mu,ja,male,neither,27.0,4.0,no,70.0,4515169791.764706,63.0,1.0,other,other
+Beta,yes,0,mu,nee,male,fat,24.0,0.0,no,60.0,4515169791.764706,1279.0,2.0,weather,productivity
+Beta,yes,0,mu,nee,female,neither,26.0,0.0,no,45.0,10.0,7.0,10.0,weather,other
+Beta,yes,0,mu,ja,male,fat,23.0,0.0,no,33.0,1000.0,5.0,11.0,food,sleep
+Beta,no,1,mu,ja,male,fat,24.72429906542056,2.0,no,20.0,0.0,10.0,0.0,sport,fun
+Beta,yes,0,mu,ja,female,fat,24.0,0.0,no,60.0,1.0,1.0,0.0,other,sport
+Other,yes,unknown,mu,unknown,female,neither,22.0,0.0,no,32.0,100.0,19.0,0.0,food,socialize
+Business,yes,0,mu,nee,female,fat,24.72429906542056,0.0,no,40.0,20.0,9.0,3.0,food,productivity
+Business,yes,1,mu,ja,female,fat,25.0,0.0,no,30.0,10.0,5.0,0.0,weather,socialize
+Beta,yes,0,mu,nee,male,fat,24.0,0.0,no,20.0,5.0,4.0,1.0,weather,other
+Business,yes,0,mu,ja,male,slim,22.0,0.0,no,50.0,5.0,9.0,11.0,other,food
+Beta,yes,0,mu,ja,male,neither,25.0,0.0,no,30.0,7.0,2.0,3.0,drinks,food
+Beta,yes,1,mu,ja,male,I have no idea what you are talking about,24.72429906542056,4.0,no,50.0,4515169791.764706,2.1134547392206386e+35,1.0,other,food
+Other,yes,unknown,unknown,nee,female,fat,23.0,2.0,no,35.0,5.0,56.0,0.0,weather,outside
+Beta,yes,0,mu,nee,male,fat,24.0,0.0,no,20.0,5.0,9.0,11.0,food,other
+Beta,no,0,mu,nee,male,neither,26.0,0.0,no,69.0,69.0,2.1134547392206386e+35,1.0,productivity,socialize
+Business,yes,0,mu,ja,male,fat,24.72429906542056,1.0,unknown,80.0,4515169791.764706,57.0,2.0,other,productivity
+Beta,yes,1,mu,ja,male,fat,23.0,0.0,no,37.0,100.0,2.1134547392206386e+35,0.0,other,other
+Beta,yes,1,mu,nee,male,neither,25.0,0.0,no,40.0,5.0,3.0,11.0,sport,socialize
+Business,yes,0,mu,nee,male,neither,23.0,0.0,no,30.0,4515169791.764706,1.0,1.0,productivity,socialize
+Beta,yes,1,sigma,nee,male,slim,23.0,1.0,no,5.0,1.0,3.0,0.0,food,other
+Beta,yes,0,sigma,nee,female,neither,23.0,1.0,no,60.0,10.0,7.0,1.0,weather,socialize
+Beta,unknown,0,mu,ja,unknown,neither,27.0,3.6496350364963503,no,10.0,6.0,13.0,3.0,friends,sport
+Beta,yes,0,mu,ja,female,neither,23.0,0.0,no,67.0,0.0,2.1134547392206386e+35,2.0,sport,socialize
+Beta,yes,0,sigma,nee,female,slim,24.72429906542056,0.0,no,0.0,70.0,3.0,0.0,friends,sport
+Beta,no,0,mu,nee,male,fat,25.0,1.0,unknown,14.0,8.0,9.0,1.0,food,socialize
+Beta,yes,0,mu,ja,male,I have no idea what you are talking about,24.72429906542056,0.0,no,50.0,0.0,22.0,3.0,sleep,food
+Business,yes,1,mu,ja,male,I have no idea what you are talking about,27.0,0.0,no,75.0,4515169791.764706,454.0,2.0,friends,food
+Beta,yes,0,mu,nee,female,I have no idea what you are talking about,24.72429906542056,0.0,no,65.0,4515169791.764706,4.0,2.0,friends,food
+Business,yes,0,mu,nee,female,fat,23.0,0.0,no,30.0,50.0,99.0,10.0,food,socialize
+Beta,yes,0,mu,ja,male,fat,24.0,0.0,no,76.0,5.0,88.0,0.0,weather,other
+Beta,yes,0,sigma,nee,male,unknown,45.0,2.0,yes,35.0,50.0,8.0,2.0,weather,food
+Beta,yes,0,mu,ja,male,neither,24.72429906542056,2.0,no,95.0,1.0,726.0,3.0,food,productivity
+Beta,unknown,0,mu,nee,male,unknown,24.0,0.0,no,65.0,4515169791.764706,0.0,4.0,productivity,playing
+Business,yes,0,mu,ja,female,fat,26.0,0.0,no,40.0,30.0,7.0,1.0,friends,other
+Beta,yes,1,mu,ja,male,fat,24.72429906542056,0.0,no,70.0,80.0,2.1134547392206386e+35,2.0,weather,food
+Beta,no,0,mu,nee,female,fat,23.0,0.0,no,50.0,1.0,7.0,7.0,other,other
+Beta,no,1,mu,ja,female,neither,24.72429906542056,0.0,no,40.0,70.0,6.0,1.0,weather,socialize
+Beta,no,0,mu,nee,female,neither,24.72429906542056,1.0,no,47.0,4515169791.764706,3.0,11.0,other,other
+Beta,no,0,mu,ja,male,fat,24.0,0.0,no,86.0,4515169791.764706,2.1134547392206386e+35,11.0,other,fun
+Other,no,0,mu,ja,male,I have no idea what you are talking about,24.0,0.0,unknown,61.0,4515169791.764706,95.0,11.0,food,other
+Other,no,0,mu,ja,male,fat,24.0,0.0,no,61.0,99.0,6.0,11.0,other,other
+Beta,yes,1,mu,ja,male,slim,30.0,0.0,no,40.0,0.0,5.0,0.0,other,socialize
+Beta,no,0,mu,nee,female,slim,27.0,0.0,no,15.0,4515169791.764706,5.0,1.0,other,socialize
+Beta,no,0,mu,nee,female,neither,26.0,0.0,no,10.0,4515169791.764706,7.0,11.0,other,food
+Beta,yes,0,mu,ja,female,I have no idea what you are talking about,24.72429906542056,2.0,no,70.0,75.0,5.0,0.0,other,other
+Beta,no,0,unknown,ja,male,neither,30.0,0.0,no,10.0,100.0,163.0,2.0,weather,other
+Beta,no,0,mu,ja,female,slim,25.0,1.0,no,15.0,2.0,464.0,11.0,food,socialize
+Beta,yes,1,mu,ja,female,fat,24.72429906542056,100.0,no,41.48736462093863,4515169791.764706,9.0,6.0,other,other
+Other,no,0,mu,ja,male,slim,24.72429906542056,0.0,no,50.0,0.0,100000.0,1.0,food,drinks
+Beta,yes,0,sigma,ja,male,fat,23.0,0.0,no,25.0,100.0,2.1134547392206386e+35,0.0,friends,other
+Business,yes,1,mu,ja,female,neither,23.0,0.0,no,30.0,1.0,7.0,0.0,weather,socialize
+Business,yes,0,mu,nee,female,neither,24.72429906542056,3.6496350364963503,unknown,50.0,50.0,13.0,0.0,productivity,sport
+Beta,yes,1,mu,ja,male,fat,28.0,0.0,no,75.0,100.0,8.0,0.0,food,playing
+Business,yes,unknown,mu,ja,male,neither,29.0,0.0,yes,60.0,100.0,28.0,10.0,sport,socialize
+Beta,yes,1,mu,ja,female,neither,24.0,1.0,unknown,75.0,10.0,7.0,11.0,other,sport
+Beta,no,0,mu,ja,male,neither,23.0,0.0,no,60.0,70.0,12.0,11.0,food,other
+Beta,yes,unknown,unknown,nee,female,neither,25.0,0.0,no,70.0,4515169791.764706,2.0,0.0,productivity,socialize
+Beta,no,0,mu,nee,female,fat,23.0,0.0,no,20.0,10.0,3.0,0.0,friends,other
+Beta,yes,1,unknown,nee,female,neither,25.0,0.0,no,70.0,0.0,7.0,10.0,food,food
+Beta,yes,0,mu,ja,female,I have no idea what you are talking about,24.72429906542056,0.0,no,80.0,100.0,7.0,8.0,productivity,productivity
+Beta,no,0,sigma,nee,male,neither,23.0,0.0,no,40.0,2.0,43.0,1.0,sleep,sport
+Other,no,1,unknown,ja,male,fat,24.0,0.0,no,10.0,1.0,5.0,0.0,productivity,sport
+Beta,no,0,mu,nee,female,fat,24.0,0.0,no,50.0,10.0,9.0,2.0,weather,other
+Beta,no,1,mu,nee,female,slim,24.0,1.0,no,50.0,4515169791.764706,73.0,3.0,sleep,food
+Beta,yes,0,mu,nee,male,fat,24.72429906542056,0.0,no,50.0,100.0,1e-36,9.0,other,other
+Business,yes,1,mu,ja,male,slim,25.0,0.0,no,40.0,1.0,25.0,4.0,drinks,food
+Business,yes,1,mu,ja,female,neither,24.72429906542056,0.0,no,40.0,10.0,7.0,11.0,weather,other
+Business,yes,0,mu,nee,male,fat,21.0,2.0,no,30.0,100.0,12.0,3.0,sleep,food
+Business,yes,0,mu,nee,male,fat,24.0,0.0,no,40.0,20.0,6.0,2.0,productivity,other
+Other,no,unknown,sigma,nee,female,fat,27.0,3.0,no,60.0,30.0,19.0,11.0,food,food
+Beta,yes,0,mu,nee,male,fat,23.0,0.0,no,100.0,20.0,8.0,0.0,other,drinks
+Beta,yes,0,sigma,ja,male,fat,24.0,0.0,no,50.0,1.0,728.0,0.0,sleep,food
+Business,yes,1,mu,ja,male,fat,26.0,1.0,no,70.0,8.0,10.0,1.0,drinks,food
+Business,yes,0,mu,ja,female,neither,26.0,0.0,no,40.0,50.0,5.0,10.0,other,socialize
+Business,yes,1,mu,ja,male,fat,23.0,0.0,no,0.0,100.0,9.0,2.0,drinks,other
+Beta,no,0,mu,nee,female,I have no idea what you are talking about,25.0,0.0,no,40.0,5.0,20.0,2.0,friends,food
+Beta,yes,1,mu,ja,male,fat,23.0,0.0,no,0.0,25.0,7.0,0.0,other,sleep
+Beta,yes,0,mu,nee,male,fat,27.0,0.0,no,75.0,0.0,3587.0,8.0,other,other
+Beta,no,1,mu,ja,female,slim,23.0,1.0,no,25.0,5.0,9.0,11.0,food,socialize
+Beta,yes,1,mu,ja,male,fat,23.0,0.0,no,20.0,4515169791.764706,3.0,11.0,productivity,socialize
+Beta,no,1,mu,ja,female,neither,24.72429906542056,0.0,no,75.0,100.0,5.0,7.0,weather,outside
+Business,yes,0,mu,nee,male,fat,24.72429906542056,0.0,no,35.0,4515169791.764706,9.0,0.0,food,sleep
+Beta,yes,0,mu,nee,male,fat,25.0,3.0,no,1.0,12.0,12.0,0.0,weather,music
+Beta,yes,1,mu,ja,female,fat,24.72429906542056,2.0,no,20.0,5.0,8.0,0.0,other,food
+Beta,yes,1,mu,ja,female,fat,27.0,6.0,no,86.0,5.0,42.0,11.0,friends,food
+Beta,no,0,mu,ja,male,fat,26.0,0.0,no,72.0,5.0,9.0,11.0,food,reading
+Beta,no,0,mu,nee,male,neither,24.0,1.0,no,10.0,0.0,2.1134547392206386e+35,1.0,weather,productivity
+Business,no,0,mu,nee,male,fat,24.0,0.0,no,100.0,0.0,4.0,0.0,other,productivity
+Business,yes,0,mu,ja,male,fat,24.72429906542056,0.0,no,60.0,5.0,9.0,0.0,productivity,productivity
+Beta,yes,1,mu,ja,female,neither,24.72429906542056,0.0,no,10.0,4515169791.764706,4.0,4.0,other,other
+Beta,no,0,mu,nee,female,fat,24.72429906542056,1.0,no,41.48736462093863,4515169791.764706,7.0,0.0,other,other
+Business,yes,0,mu,nee,female,fat,28.0,4.0,no,60.0,50.0,7.0,1.0,other,sleep
+Business,yes,0,sigma,ja,male,fat,22.0,0.0,no,30.0,1.0,8.0,1.0,food,other
+Beta,no,0,mu,unknown,female,neither,28.0,3.6496350364963503,no,10.0,30.0,6.0,1.0,other,other
+Beta,yes,0,mu,ja,male,fat,25.0,5.0,no,30.0,60.0,7.0,2.0,weather,socialize
+Beta,yes,1,mu,nee,male,fat,27.0,2.0,no,69.0,5.0,6.0,1.0,other,other
+Beta,no,0,mu,ja,male,fat,24.72429906542056,0.0,no,10.0,100.0,7.0,9.0,other,other
+Beta,yes,1,mu,ja,male,neither,26.0,12.0,yes,60.0,75.0,42.0,1.0,other,food
+Beta,no,0,mu,nee,female,neither,22.0,1.0,no,70.0,2.0,69.0,0.0,food,other
+Beta,yes,1,sigma,nee,male,fat,25.0,0.0,no,30.0,10.0,-1.0,8.0,food,other
