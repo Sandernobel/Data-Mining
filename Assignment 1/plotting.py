@@ -4,36 +4,37 @@ import matplotlib.pyplot as plt
 from collections import Counter
 from varname import varname
 
-from helpers import *
-
-def cat_vs_con(df, cat, con):
+def plot_mean(df, xlabel, ylabel):
     """
     Plot categorical vs continuous series
-    :param cat: categorical series (string)
-    :param con: continuous series (string)
+    :param xlabel: categorical series (string)
+    :param ylabel: continuous series (string)
     :param mean: whether you want to plot frequency (false) or mean (true)
     :return:
     """
 
     # Get actual attributes
-    cat_array = np.asarray(getattr(df, cat))
-    con_array = np.asarray(getattr(df, con))
+    cat_array = np.asarray(getattr(df, xlabel))
+    con_array = np.asarray(getattr(df, ylabel))
+
+    cat_array = np.asarray([cat_array[x] for x in range(len(con_array)) if con_array[x] > 0])
+    con_array = np.asarray([con_array[x] for x in range(len(con_array)) if con_array[x] > 0]).astype(int)
     cat_values = sorted(set(cat_array))
 
     counter = dict()
-
     # Loop over different categorical variables
     for value in cat_values:
 
         # Select relevant instances and get mean of continuous variable
         bool_mask = np.where(cat_array == value, 1, 0)
         con_values = con_array[bool_mask == 1]
+        print(con_values)
         counter[value] = np.mean(con_values)
 
     # Plot it
     plt.bar(counter.keys(), counter.values())
-    plt.xlabel(cat)
-    plt.ylabel(con)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.show()
 
 
@@ -58,23 +59,29 @@ def con_vs_con(df, con1, con2):
 
 
 
-def cat_vs_cat(df, cat1, cat2):
+def plot_frequency(df, xlabel, ylabel, integer=False):
     """
     :param df: dataframe
-    :param cat1: first categorical variable
-    :param cat2: second categorical variable
+    :param xlabel: first categorical variable
+    :param ylabel: second variable
     """
 
     # Get attributes
-    first_array = np.asarray(getattr(df, cat1))
-    second_array = np.asarray(getattr(df, cat2))
+    first_array = np.asarray(getattr(df, xlabel))
+    second_array = np.asarray(getattr(df, ylabel))
 
     first_set = sorted(set(first_array))
+    first_array = np.asarray([first_array[x] for x in range(len(second_array)) if second_array[x] > 0])
 
+    if integer:
+        second_array = np.asarray([second_array[x] for x in range(len(second_array)) if second_array[x] > 0]).astype(int)
+    else:
+        second_array = np.asarray([second_array[x] for x in range(len(second_array)) if second_array[x] > 0])
     counter = dict()
 
     # Loop over variables
     for var in range(len(first_set)):
+        plt.subplot(1,len(first_set),var+1)
         current_var = first_set[var]
 
         # Extract relevant subjects and get count of every second categorical variable
@@ -90,6 +97,6 @@ def cat_vs_cat(df, cat1, cat2):
         # Plot them (many plots after each other, one for each categorical level)
         plt.bar(keys, values)
         plt.title(current_var)
-        plt.xlabel(cat2)
+        plt.xlabel(xlabel)
         plt.ylabel("Frequency")
-        plt.show()
+    plt.show()

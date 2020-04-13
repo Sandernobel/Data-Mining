@@ -3,10 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from collections import Counter
-from helpers import *
 from plotting import *
 from cleaning import *
 from decision_tree import DecisionTree
+from naive_bayes import *
 
 desired_width=320
 pd.set_option('display.width', desired_width)
@@ -36,26 +36,26 @@ if __name__ == "__main__":
     # Databases Course                                                      # categorical
     # Gender                                                                # categorical
     # Chocolate                                                             # categorical
-    df.Age = birthday(np.asarray(df.Age))                                   # grouped
-    df.Neighbors = continuous(np.asarray(df.Neighbors))                     # continuous
+    df.Age = birthday(df.Age)                                               # continuous
+    df.Neighbors = continuous(df.Neighbors)                                 # continuous
     # Stand                                                                 # categorical
-    df.Stress = continuous(np.asarray(df.Stress), 0.001, 100)               # continuous
-    df.Euros = continuous(np.asarray(df.Euros), 0.001, 100)                 # continuous
-    df.Random_number = continuous(np.asarray(df.Random_number), 0.001, 100) # continuous
-    df.Bedtime = bedtime(np.asarray(df.Bedtime))                            # grouped
+    df.Stress = continuous(df.Stress)                                       # continuous
+    df.Euros = continuous(df.Euros)                                         # continuous
+    df.Random_number = continuous(df.Random_number)                         # continuous
+    df.Bedtime = bedtime(np.asarray(df.Bedtime))                            # continuous
     df.Good_day_1 = good_day_1(np.asarray(df.Good_day_1))                   # categorical
     df.Good_day_2 = good_day_2(np.asarray(df.Good_day_2))                   # categorical
 
-    # gender_bedtimes = compare_series('Gender', 'Bedtime', count=True)
-    # plot_comparison(gender_bedtimes)
-    #
-    # program_bedtimes = compare_series('Program', "Bedtime", count=True)
-    # program_bedtimes = {key: value for (key, value) in program_bedtimes.items() if len(list(program_bedtimes[key].values())) > 3}
-    # plot_comparison(program_bedtimes)
+    df.dropna(inplace=True)
+    print(df.describe(include='all'))
 
-    # cat_vs_cat(df, "Good_day_1", "Bedtime")
-    # cat_vs_cat(df, "Program", "ML_course")
-    label = "Program"
-    columns.remove(label)
-    clsf = DecisionTree(df, columns, label)
-    clsf.run_bottom_up()
+    plot_frequency(df, "Program", "Age")
+
+    # label = "Program"
+    # features = list(df.columns)
+    # features.remove(label)
+    # cls = DecisionTree(df, features, label)
+    # cls.bottom_up()
+
+    # separated = separate_by_class(df, "Age")
+    # print(calc_prob(26, df.Age))

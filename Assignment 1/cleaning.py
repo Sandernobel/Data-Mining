@@ -1,11 +1,26 @@
 import pandas as pd
 import numpy as np
+import re
 
-from helpers import *
 
 ##############################
 # functions to clean up dataset
 ##############################
+
+def clean_up(programs, swapper):
+    """
+    Cleans up program by converting all programs to its abbreviations
+    """
+
+    # Loop over keys
+    for key in swapper.keys():
+
+        r = re.compile(".*" + str(key) + ".*", re.IGNORECASE)
+        newlist = list(filter(r.match, programs))
+        programs = np.asarray([swapper[key] if x in newlist else x for x in programs])
+
+    return programs
+
 
 def program(prog):
     """
@@ -13,23 +28,43 @@ def program(prog):
     :param prog:
     :return:
     """
-    swapper = {"Artificial Intelligence": "AI",
-               "AI": "AI",
-               "Business Analytics": "BA",
-               "Computer science": "CS",
-               "QRM": "QRM",
-               "Quantitative risk management": "QRM",
-               "Econometrics": "Econometrics",
-               "Business Administration": "Business administration",
-               "Bioinformatics": "Bioinformatics",
-               "Computational Science": "Computational science",
-               "Digital business and innovation": "Digital business and innovation",
-               "Information Sciences": "Information sciences",
-               "Exchange": "Exchange"}
+    swapper = {"Artificial Intelligence": "Beta",
+               "AI": "Beta",
+               "Business Analytics": "Business",
+               "Computer science": "Beta",
+               "QRM": "Business",
+               "Quantitative risk management": "Business",
+               "Econometrics": "Business",
+               "Business Administration": "Business",
+               "Bioinformatics": "Beta",
+               "Computational Science": "Beta",
+               "Digital business": "Beta",
+               "Information Science": "Beta",
+               "Information studies": "Beta",
+               "Human language": "Other",
+               "Human movement": "Other",
+               "Datascience": "Beta",
+               "Health sciences": "Other",
+               "Fintech": "Business",
+               "Erasmus": "Other",
+               "Computing system": "Beta",
+               "Finance": "Business",
+               "Scientific computing": "Beta",
+               "Big data engineering": "Beta",
+               "EOR": "Business",
+               "Exchange": "Other",
+               "Physics": "Beta",
+               "CPS": "Other",
+               "CLS": "Other",
+               "Computer systems": "Beta",
+               "Forensic science": "Other",
+               "MSc": "Other",
+               "BA": "Business",
+               "CS": "Beta"}
 
     # swap all studies to one standard notation
     prog = clean_up(prog, swapper)
-    prog = np.asarray(['other' if x not in swapper.values() else x for x in prog])
+    # prog = np.asarray(['other' if x not in swapper.values() else x for x in prog])
 
     return prog
 
@@ -41,27 +76,28 @@ def birthday(dates):
     :return:
     """
     # create dictionary
-    birth_swap = dict()
-    for x in range(89, 99):
-        y = '19' + str(x)
-        birth_swap[x] = str(2020 - int(y) - 1) + '/' + str(2020 - int(y))
-    birth_swap[99] = str(2020 - 1999 - 1) + '/' + str(2020 - 1999)
+    birth_swap = {str(x) : 2020-x for x in range(1970,2001)}
+    birth_swap.update({'-'+str(x) : 120-x for x in range(70, 99)})
+    birth_swap.update({'/' + str(x) : 120-x for x in range(70, 99)})
 
     birth = clean_up(np.asarray(dates), birth_swap)
-    birth = np.asarray(["NA" if x not in birth_swap.values() else x for x in birth])
-    return birth
+    birth_pd = np.asarray(pd.to_numeric(pd.Series(birth), errors='coerce')).astype(int)
+    birth_pd = pd.Series([np.NaN if (x < 0 or x > 100) else x for x in birth_pd])
+    birth_pd.fillna(birth_pd.mean(), inplace=True)
+
+    return birth_pd
 
 
-def continuous(series, min_val=None, max_val=None):
+def continuous(series):
     """
     Cleans up continuous data
     :param neighbors:
     :return:
     """
 
-    series_mean = calc_mean(series, min_val, max_val)
-    new_series = impute_mean(series, series_mean, min_val, max_val)
-    return new_series
+    serie = pd.to_numeric(series, errors='coerce')
+    serie.fillna(serie.mean(), inplace=True)
+    return serie
 
 
 def bedtime(times):
@@ -72,21 +108,43 @@ def bedtime(times):
     """
 
     # Create swapper
-    bed_swap = {str(x) + ':': str(x % 12) + '-' + str(x % 12 + 1) for x in range(10, 24)}
-    for x in range(7):
-        bed_swap[str(x) + ':'] = str(x) + '-' + str(x + 1)
-        bed_swap[str(x) + 'pm'] = str(x) + '-' + str(x + 1)
-        bed_swap[str(x) + 'am'] = str(x) + '-' + str(x + 1)
-        bed_swap[str(x) + ' pm'] = str(x) + '-' + str(x + 1)
-        bed_swap[str(x) + ' am'] = str(x) + '-' + str(x + 1)
-        bed_swap[str(x) + 'h'] = str(x) + '-' + str(x + 1)
-    bed_swap['10'] = '10-11'
-    bed_swap['01'] = '1-2'
-    bed_swap['23'] = '11-12'
-    bed_swap['24'] = '12-00'
+    bed_swap = {str(x) + ':': x%12 for x in range(10, 24)}
+    for x in range(9):
+        bed_swap[str(x) + ':'] = x%12
+        bed_swap[str(x) + 'pm'] = x%12
+        bed_swap[str(x) + 'am'] = x%12
+        bed_swap[str(x) + ' pm'] = x%12
+        bed_swap[str(x) + ' am'] = x%12
+        bed_swap[str(x) + 'h'] = x%12
+    bed_swap['10'] = 10
+    bed_swap['01'] = 1
+    bed_swap['22'] = 10
+    bed_swap['23'] = 11
+    bed_swap['24'] = 0
+    bed_swap['Twelve'] = 0
+    bed_swap['00'] = 0
+    bed_swap['17'] = 5
+    bed_swap['0,2'] = 0
+    bed_swap['16'] = 4
+    bed_swap['1,3'] = 1
+    bed_swap['0,3'] = 0
+    bed_swap['13'] = 1
+    bed_swap['12'] = 0
+    bed_swap['yes'] = "NA"
+    bed_swap['30'] = "NA"
+    bed_swap['dont know'] = "NA"
+    bed_swap['nan'] = "NA"
+    bed_swap['que'] = "NA"
+    bed_swap['the beatles'] = "NA"
+    bed_swap['troubles'] = "NA"
+    bed_swap['didn'] = "NA"
+    bed_swap['home'] = "NA"
 
-    bedtimes = clean_up(np.asarray(times).astype(str), bed_swap)
-    bedtimes = delete_rest(bedtimes, bed_swap)
+    bedtimes = list(clean_up(np.asarray(times).astype(str), bed_swap))
+    bedtimes[bedtimes.index('?')] = "NA"
+    bedtimes = np.asarray(pd.to_numeric(pd.Series(bedtimes), errors='coerce')).astype(int)
+    bedtimes = np.where(bedtimes < 0, np.NaN, bedtimes)
+
     return bedtimes
 
 def good_day_1(series):
