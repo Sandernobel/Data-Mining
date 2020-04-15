@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 import re
 
-
 ##############################
 # functions to clean up dataset
 ##############################
+
 
 def clean_up(programs, swapper):
     """
@@ -64,7 +64,6 @@ def program(prog):
 
     # swap all studies to one standard notation
     prog = clean_up(prog, swapper)
-    # prog = np.asarray(['other' if x not in swapper.values() else x for x in prog])
 
     return prog
 
@@ -97,6 +96,8 @@ def continuous(series):
 
     serie = pd.to_numeric(series, errors='coerce')
     serie.fillna(serie.mean(), inplace=True)
+    serie = np.where(serie < 0, 0, serie)
+    serie = np.where(serie > 100, 100, serie)
     return serie
 
 
@@ -143,7 +144,8 @@ def bedtime(times):
     bedtimes = list(clean_up(np.asarray(times).astype(str), bed_swap))
     bedtimes[bedtimes.index('?')] = "NA"
     bedtimes = np.asarray(pd.to_numeric(pd.Series(bedtimes), errors='coerce')).astype(int)
-    bedtimes = np.where(bedtimes < 0, np.NaN, bedtimes)
+    bedtimes = pd.Series(np.where(bedtimes < 0, np.NaN, bedtimes))
+    bedtimes.fillna(method='ffill', inplace=True)
 
     return bedtimes
 
@@ -202,3 +204,28 @@ def good_day_2(series):
     good_3 = clean_up(series, swapper)
     good_3 = np.asarray(["other" if x not in words.keys() else x for x in good_3])
     return good_3
+
+def clean(df):
+    """
+
+    :param df:
+    :return:
+    """
+    # Change columns
+    columns = ['Program', 'ML_course', 'IR_course', 'Stats_course', 'Databases_course', "Gender", "Chocolate", "Age",
+               "Neighbors", "Stand", "Stress", "Euros", "Random_number", "Bedtime", "Good_day_1", "Good_day_2"]
+    df.columns = columns
+
+    # Clean up programs
+    df.Program = program(np.asarray(df.Program))                            # categorical
+    df.Age = birthday(df.Age)                                               # continuous
+    df.Neighbors = continuous(df.Neighbors)                                 # continuous
+    # Stand                                                                 # categorical
+    df.Stress = continuous(df.Stress)                                       # continuous
+    df.Euros = continuous(df.Euros)                                         # continuous
+    df.Random_number = continuous(df.Random_number)                         # continuous
+    df.Bedtime = bedtime(np.asarray(df.Bedtime))                            # continuous
+    df.Good_day_1 = good_day_1(np.asarray(df.Good_day_1))                   # categorical
+    df.Good_day_2 = good_day_2(np.asarray(df.Good_day_2))                   # categorical
+
+    return df
