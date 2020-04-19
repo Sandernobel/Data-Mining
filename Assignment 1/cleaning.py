@@ -83,6 +83,7 @@ def birthday(dates):
     birth_pd = np.asarray(pd.to_numeric(pd.Series(birth), errors='coerce')).astype(int)
     birth_pd = pd.Series([np.NaN if (x < 0 or x > 100) else x for x in birth_pd])
     birth_pd.fillna(birth_pd.mean(), inplace=True)
+    birth_pd = np.asarray(birth_pd).astype(int)
 
     return birth_pd
 
@@ -146,6 +147,7 @@ def bedtime(times):
     bedtimes = np.asarray(pd.to_numeric(pd.Series(bedtimes), errors='coerce')).astype(int)
     bedtimes = pd.Series(np.where(bedtimes < 0, np.NaN, bedtimes))
     bedtimes.fillna(method='ffill', inplace=True)
+    bedtimes = np.asarray(pd.to_numeric(pd.Series(bedtimes), errors='coerce')).astype(int)
 
     return bedtimes
 
