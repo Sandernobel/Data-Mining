@@ -59,6 +59,5 @@ def clean_up_df(df: pd.DataFrame, file: str, percent=0.90):
         df_clean[feature] = impute_with_dist(df_clean[feature])
     print(f"\t\tImputing completed")
     df_clean['date_time'] = pd.to_datetime(df_clean['date_time'], infer_datetime_format=True)
-    print(f'\t Writing df to csv file')
-    df_clean.to_csv(f'clean_{file}_set.csv')
+
     return df_clean
