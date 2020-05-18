@@ -1,6 +1,7 @@
 import lightgbm as lgbm
 import numpy as np
 import pandas as pd
+import pickle, datetime
 from collections import Counter
 
 
@@ -19,30 +20,42 @@ def split_data(df: pd.DataFrame):
     return train_data, val_data
 
 
-def test_lgbm(df: pd.DataFrame, model: lgbm.LGBMRanker):
+def get_predictions(df: pd.DataFrame, model: lgbm.LGBMRanker):
     """
 
     :param df:
     :return:
     """
 
-    test_pred = model.predict(df.drop('date_time', axis=1))
+    print(f'\tPredicting relevance')
+    test_pred = model.predict(df)
     df['relevance'] = test_pred
+    df.sort_values(by=['srch_id', 'relevance'], ascending=[True, False], inplace=True)
+    kaggle_answer = pd.DataFrame({'srch_id': df['srch_id'],
+                                  'prop_id': df['prop_id']})
+    print(f'\t Writing answers to csv')
+    kaggle_answer.to_csv('expedia_answer.csv', index=False)
 
-    return df
+def save_model(model: lgbm.LGBMRanker):
+    """
+    Saves model
+    :param model:
+    :return:
+    """
+    out_file = open("model.p", 'wb+')
+    pickle.dump(model, out_file)
+    out_file.close()
 
-
-def train_lgbm(df: pd.DataFrame, seed: int = 15):
+def train_lgbm(df: pd.DataFrame):
     """
 
     :param df:
     :param seed: random seed
     :return:
     """
-    np.random.seed(seed)
 
     print("\tSplitting data")
-    train_data, val_data = split_data(df.drop(['date_time', 'click_bool', 'booking_bool', 'position'], axis=1))
+    train_data, val_data = split_data(df.drop(['click_bool', 'booking_bool', 'position'], axis=1))
     y_train, y_val = train_data['relevance'], val_data['relevance']
     X_train, X_val = train_data.drop('relevance', axis=1), val_data.drop('relevance', axis=1)
 

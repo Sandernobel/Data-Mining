@@ -39,8 +39,21 @@ def aggregate_competitors(df: pd.DataFrame, max_vals: int):
                   'orig_destination_distance'], axis=1)
     return df
 
+def delete_outliers(df: pd.DataFrame, column: str):
+    """
 
-def clean_up_df(df: pd.DataFrame, file: str, percent=0.90):
+    :param df:
+    :param column:
+    :return:
+    """
+    std = df[column].std()
+    mean = df[column].mean()
+    cut_off = std * 3
+    lower, upper = mean - cut_off, mean + cut_off
+    trimmed_df = df[(df[column] < upper) & (df[column] > lower)]
+    return trimmed_df
+
+def clean_up_df(df: pd.DataFrame, percent=0.90):
     """
     Cleans dataframe and deletes/imputes missing values
     :param df:
@@ -51,13 +64,20 @@ def clean_up_df(df: pd.DataFrame, file: str, percent=0.90):
 
     print(f"\tDeleting every column with over {percent*100}% missing values")
     to_keep = null_values.index[np.asarray(null_values / max_vals < percent)]
+
     df_clean = df[to_keep]
+
     print(f"\t\tDeleting completed\n\tAggregating all competitor columns")
     df_clean = aggregate_competitors(df_clean, max_vals)
     print(f"\t\tAggregating completed\n\tImputing rest of na's")
     for feature in ['prop_review_score', 'prop_location_score2']:
         df_clean[feature] = impute_with_dist(df_clean[feature])
     print(f"\t\tImputing completed")
-    df_clean['date_time'] = pd.to_datetime(df_clean['date_time'], infer_datetime_format=True)
+    print(f"\tTrimming outliers")
+    for column in ['srch_length_of_stay', 'prop_location_score2', 'srch_booking_window']:
+        df_clean = delete_outliers(df_clean, column)
+        print(f"\t\tTrimming {column} completed")
+    print(f'\tTrimming all outliers completed')
+    df_clean = df_clean.drop('date_time', axis=1)
 
     return df_clean
