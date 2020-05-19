@@ -23,14 +23,6 @@ def aggregate(df: pd.DataFrame, aggregate_over: str, to_aggregate: list, methods
     return df.merge(agg_df, on=aggregate_over, suffixes=(False, False)).sort_values('srch_id')
 
 
-def write_to_csv(df: pd.DataFrame, file:str):
-    """
-
-    :return:
-    """
-    print(f"\tWriting {file} to csv")
-    df.to_csv(f'clean_{file}_set.csv')
-    print(f"\t\tDone writing")
 
 def preprocess(df: pd.DataFrame):
     """

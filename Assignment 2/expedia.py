@@ -8,7 +8,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 
 
-if not path.exists('clean_train_set.csv') or not path.exists('clean_test_set.csv'):
+if not path.exists('train.csv') or not path.exists('test.csv'):
     print(f'Reading train file')
     train_file = pd.read_csv('training_set_VU_DM.csv')
     train_file['train'] = 'train'
@@ -35,15 +35,23 @@ if not path.exists('clean_train_set.csv') or not path.exists('clean_test_set.csv
     print('\tSplitting done')
 
     print(f'Writing cleaned training file to csv')
-    write_to_csv(train_file, 'train')
+    out_file = open('train.csv', 'wb+')
+    pickle.dump(train_file, out_file)
+    out_file.close()
     print(f'Writing test file...')
-    write_to_csv(test_file, 'test')
+    out_file = open('test.csv', 'wb+')
+    pickle.dump(test_file, out_file)
+    out_file.close()
     print('\tDone')
 else:
     print(f'Reading clean train file')
-    train_file = pd.read_csv('clean_train_set.csv', index_col=0)
+    infile = open('train.csv', 'rb')
+    train_file = pickle.load(infile)
+    infile.close()
     print(f'\tComplete\nReading test file')
-    test_file = pd.read_csv('clean_test_set.csv', index_col=0)
+    infile = open('test.csv', 'rb')
+    test_file = pickle.load(infile)
+    infile.close()
     print(f'\tComplete')
 
 print('\nPreparing data for ranker')
